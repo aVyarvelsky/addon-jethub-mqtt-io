@@ -15,21 +15,24 @@ gpio_modules:
   - name: gpio
     module: gpiod
     chip: /dev/gpiochip0
+    retain: true
 
 digital_inputs:
   - name: jethub_front_button
     module: gpio
     pin: 10
     inverted: true
+    retain: true
     poll_interval: 0.1
     ha_discovery:
-      component: binary_sensor
+      component: button
       name: JetHub Front Button
 
   - name: jethub_input_1
     module: gpio
     pin: 46
     poll_interval: 0.1
+    retain: true
     ha_discovery:
       component: binary_sensor
       name: JetHub Input 1
@@ -37,6 +40,7 @@ digital_inputs:
     module: gpio
     pin: 45
     poll_interval: 0.1
+    retain: true
     ha_discovery:
       component: binary_sensor
       name: JetHub Input 2
@@ -44,6 +48,7 @@ digital_inputs:
     module: gpio
     pin: 44
     poll_interval: 0.1
+    retain: true
     ha_discovery:
       component: binary_sensor
       name: JetHub Input 3
@@ -51,6 +56,7 @@ digital_inputs:
     module: gpio
     pin: 43
     poll_interval: 0.1
+    retain: true
     ha_discovery:
       component: binary_sensor
       name: JetHub Input 4
@@ -60,6 +66,7 @@ digital_outputs:
     module: gpio
     pin: 26
     inverted: true
+    retain: true
     ha_discovery:
       component: switch
       name: JetHub stat LED red
@@ -67,24 +74,28 @@ digital_outputs:
     module: gpio
     pin: 27
     inverted: true
+    retain: true
     ha_discovery:
       component: switch
       name: JetHub stat LED green
   - name: jethub_relay_1
     module: gpio
     pin: 30
+    retain: true
     ha_discovery:
       component: switch
       name: JetHub Relay 1
   - name: jethub_relay_2
     module: gpio
     pin: 29
+    retain: true
     ha_discovery:
       component: switch
       name: JetHub Relay 2
   - name: jethub_relay_3
     module: gpio
     pin: 28
+    retain: true
     ha_discovery:
       component: switch
       name: JetHub Relay 3
