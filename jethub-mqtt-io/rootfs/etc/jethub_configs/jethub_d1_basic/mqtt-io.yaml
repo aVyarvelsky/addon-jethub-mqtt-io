@@ -15,7 +15,6 @@ gpio_modules:
   - name: gpio
     module: gpiod
     chip: /dev/gpiochip0
-    retain: true
 
 digital_inputs:
   - name: jethub_front_button
